@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalhes | CyberSetup</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div id="toast-box"></div>
+    <nav class="navbar">
+        <div class="logo">CYBER<span>.SETUP</span></div>
+        <div class="menu">
+            <a href="loja.html"><i class="fa-solid fa-arrow-left"></i> VOLTAR À LOJA</a>
+            <a href="carrinho.html"><i class="fa-solid fa-cart-shopping"></i> <span id="cart-count" class="badge">0</span></a>
+        </div>
+    </nav>
+
+    <div class="container" style="margin-top: 40px;">
+        <div class="detalhes-grid">
+            <div class="produto-destaque">
+                <img id="detalhe-img" src="" alt="Carregando imagem...">
+            </div>
+            
+            <div class="produto-info">
+                <h1 id="detalhe-nome" style="font-size: 2rem; text-shadow: 0 0 10px var(--neon-blue);">Carregando...</h1>
+                
+                <div class="price-box">
+                    <span id="detalhe-preco" class="price" style="font-size: 2.2rem; margin: 0;">R$ 0,00</span>
+                </div>
+
+                <p id="detalhe-desc">...</p>
+                
+                <div class="tech-specs" style="margin-top: 30px;">
+                    <h3 style="font-size: 1.2rem;"><i class="fa-solid fa-list-check"></i> Especificações</h3>
+                    <ul id="lista-specs">
+                        </ul>
+                </div>
+
+                <button id="btn-add-detalhe" class="btn btn-primary" style="margin-top: 30px; padding: 20px; font-size: 1.1rem;">
+                    ADICIONAR AO CARRINHO <i class="fa-solid fa-cart-plus"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h4>CYBER.SETUP</h4>
+                <p>O melhor hardware para o seu setup.</p>
+            </div>
+            <div class="footer-col footer-links">
+                <h4>NAVEGAÇÃO</h4>
+                <a href="loja.html">Loja</a>
+                <a href="index.html">Home</a>
+            </div>
+            <div class="footer-col">
+                <h4>REDES</h4>
+                <div class="social-icons"><i class="fa-brands fa-whatsapp"></i>
+                <i class="fa-brands fa-instagram"></i>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">&copy; 2025 CyberSetup. Todos os direitos reservados.</div>
+    </footer>
+
+    <script type="module" src="script.js"></script>
+</body>
+</html>

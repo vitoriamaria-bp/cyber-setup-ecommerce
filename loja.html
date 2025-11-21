@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loja | CyberSetup</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div id="toast-box"></div>
+    <nav class="navbar">
+        <div class="logo">CYBER<span>.SETUP</span></div>
+        <div class="menu">
+            <a href="index.html">HOME</a>
+            <a href="carrinho.html"><i class="fa-solid fa-cart-shopping"></i> <span id="cart-count" class="badge">0</span></a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h2 style="border-bottom: 2px solid var(--neon-purple); padding-bottom: 10px;">Catálogo Completo</h2>
+        <div class="filters-area" style="margin-top: 20px;">
+            <div style="position: relative;">
+                <i class="fa-solid fa-search" style="position: absolute; left: 15px; top: 18px; color: var(--neon-blue);"></i>
+                <input type="text" id="search-bar" placeholder="Buscar produto por nome..." onkeyup="window.renderStore()" style="padding-left: 45px;">
+            </div>
+        </div>
+        <div id="store-grid" class="products-grid">
+             </div>
+    </div>
+
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h4>CYBER.SETUP</h4>
+                <p>Performance e qualidade.</p>
+            </div>
+            <div class="footer-col footer-links">
+                <h4>LINKS RÁPIDOS</h4>
+                <a href="index.html">Voltar para Home</a>
+                <a href="admin.html">Painel Admin</a>
+            </div>
+            <div class="footer-col">
+                <h4>CONTATO</h4>
+                <div class="social-icons"><i class="fa-brands fa-whatsapp"></i> <i class="fa-brands fa-instagram"></i></div>
+            </div>
+        </div>
+        <div class="copyright">&copy; 2025 CyberSetup. Todos os direitos reservados.</div>
+    </footer>
+
+    <script type="module" src="script.js"></script>
+</body>
+</html>

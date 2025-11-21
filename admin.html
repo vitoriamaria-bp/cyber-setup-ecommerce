@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin | CyberSetup</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div id="login-guard" class="login-overlay">
+        <div class="login-box">
+            <div class="logo" style="margin-bottom:20px; font-size:1.8rem;">CYBER<span>.ADMIN</span></div>
+            <h3 style="color: #ccc; margin-bottom: 20px; font-size: 1rem;">ÁREA RESTRITA</h3>
+            
+            <input type="password" id="admin-pass" placeholder="Senha de Acesso" style="text-align: center; font-size: 1.2rem;">
+            
+            <button class="btn btn-primary" onclick="checkLogin()" style="width: 100%; margin-top: 10px; padding: 15px;">
+                ACESSAR PAINEL
+            </button>
+            
+            <p id="login-error" style="color:#ff4444; display:none; margin-top:15px; font-weight:bold;">Senha Incorreta!</p>
+            <a href="index.html" style="display:block; margin-top:20px; font-size:0.9rem; color: #888;">Voltar ao Site</a>
+        </div>
+    </div>
+
+    <div id="toast-box"></div>
+    
+    <nav class="navbar">
+        <div class="logo">PAINEL ADMIN</div>
+        <div class="menu">
+            <a href="index.html" class="btn btn-outline" style="padding: 8px 15px;">VER SITE <i class="fa-solid fa-external-link"></i></a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px;">
+            
+            <div>
+                <h2><i class="fa-solid fa-plus-circle"></i> Cadastrar Produto</h2>
+                <div class="card" style="padding: 30px; border: 2px solid var(--neon-purple);">
+                    <form id="formAdmin">
+                        <label style="font-weight: bold;">Nome do Produto:</label>
+                        <input type="text" id="prod-nome" required placeholder="Ex: Headset Gamer...">
+                        
+                        <label style="font-weight: bold;">Preço (R$):</label>
+                        <input type="number" id="prod-preco" required step="0.01" placeholder="Ex: 450.00">
+                        
+                        <label style="font-weight: bold;">URL da Imagem:</label>
+                        <input type="url" id="prod-img" required placeholder="https://...">
+                        
+                        <label style="font-weight: bold;">Descrição Detalhada:</label>
+                        <textarea id="prod-desc" required rows="4" placeholder="Detalhes do produto..."></textarea>
+                        
+                        <button type="submit" class="btn btn-primary" style="padding: 15px; font-size: 1.1rem;">SALVAR PRODUTO</button>
+                    </form>
+                </div>
+            </div>
+
+            <div>
+                <h2><i class="fa-solid fa-boxes-stacked"></i> Produtos Ativos</h2>
+                <div class="card" style="padding: 20px; overflow-x: auto;">
+                    <table style="width:100%; margin-top: 0;">
+                        <thead>
+                            <tr>
+                                <th>Foto</th>
+                                <th>Nome</th>
+                                <th>Preço</th>
+                                <th>Ação</th>
+                            </tr>
+                        </thead>
+                        <tbody id="admin-lista">
+                            </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h4>PAINEL ADMIN</h4>
+                <p>Área restrita para gerenciamento.</p>
+            </div>
+            <div class="footer-col footer-links">
+                <h4>LINKS RÁPIDOS</h4>
+                <a href="index.html">Ir para Home</a>
+                <a href="loja.html">Ir para Loja</a>
+            </div>
+            <div class="footer-col">
+                <h4>SUPORTE</h4>
+                <div class="social-icons"><i class="fa-solid fa-headset"></i></div>
+            </div>
+        </div>
+        <div class="copyright">&copy; 2025 CyberSetup Admin.</div>
+    </footer>
+
+    <script>
+        function checkLogin() {
+            const pass = document.getElementById('admin-pass').value;
+            if(pass === 'admin') {
+                document.getElementById('login-guard').style.display = 'none';
+            } else {
+                document.getElementById('login-error').style.display = 'block';
+            }
+        }
+    </script>
+    <script type="module" src="script.js"></script>
+</body>
+</html>

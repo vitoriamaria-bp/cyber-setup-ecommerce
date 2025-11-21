@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout | CyberSetup</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div id="toast-box"></div>
+    
+    <nav class="navbar">
+        <div class="logo">CYBER<span>.SETUP</span></div>
+        <div class="menu">
+            <a href="loja.html"><i class="fa-solid fa-arrow-left"></i> CONTINUAR COMPRANDO</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h2 style="border-bottom: 2px solid var(--neon-purple); padding-bottom: 15px; margin-bottom: 40px;">
+            <i class="fa-solid fa-cart-shopping"></i> Finalizar Pedido
+        </h2>
+
+        <div class="cart-layout">
+            
+            <div class="cart-left">
+                <h3 style="font-size: 1.3rem; margin-bottom: 20px;">1. Itens no Carrinho</h3>
+                <div id="cart-items-container">
+                    </div>
+
+                <h3 style="font-size: 1.3rem; margin: 50px 0 20px;">2. Dados de Entrega</h3>
+                <div class="checkout-form">
+                    <h4><i class="fa-solid fa-truck-fast"></i> Informações de Envio</h4>
+                    <div style="margin-top: 20px;">
+                        <label style="color: #aaa; margin-bottom: 5px; display:block;">Nome Completo:</label>
+                        <input type="text" id="cliente-nome" placeholder="Ex: Danilo Fernandes">
+                        
+                        <label style="color: #aaa; margin-bottom: 5px; display:block; margin-top: 15px;">Endereço Completo:</label>
+                        <input type="text" id="cliente-endereco" placeholder="Rua, Número, Bairro, Cidade...">
+                    </div>
+                </div>
+            </div>
+
+            <div class="cart-right">
+                <div class="order-summary" style="position: sticky; top: 120px;">
+                    <h3 style="text-align: center; margin-bottom: 25px;">Resumo do Pedido</h3>
+                    
+                    <div class="summary-row">
+                        <span>Subtotal dos Itens</span>
+                        <span id="summary-subtotal">R$ 0,00</span>
+                    </div>
+                    <div class="summary-row">
+                        <span>Frete e Manuseio</span>
+                        <span style="color: var(--neon-blue); font-weight: bold;">GRÁTIS <i class="fa-solid fa-check"></i></span>
+                    </div>
+                    
+                    <div style="margin: 35px 0; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 20px;">
+                        <label style="color: #fff; font-weight:bold; font-size: 1rem; margin-bottom: 15px; display: block;">Forma de Pagamento:</label>
+                        <div class="payment-methods">
+                            <div class="pay-opt active" onclick="window.selectPay(this, 'Pix')">
+                                <i class="fa-brands fa-pix" style="color:var(--neon-blue)"></i> Pix
+                            </div>
+                            <div class="pay-opt" onclick="window.selectPay(this, 'Cartão')">
+                                <i class="fa-regular fa-credit-card" style="color:var(--neon-blue)"></i> Cartão
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="summary-total">
+                        <span>Total a Pagar</span>
+                        <span id="summary-total" style="color: var(--neon-blue); text-shadow: 0 0 10px var(--neon-blue);">R$ 0,00</span>
+                    </div>
+
+                    <button class="btn-checkout" onclick="window.finalizarCompraZap()">
+                        <i class="fa-brands fa-whatsapp"></i> ENVIAR PEDIDO AGORA
+                    </button>
+                    
+                    <p style="text-align: center; font-size: 0.85rem; color: #888; margin-top: 20px; display: flex; align-items: center; justify-content: center; gap: 10px;">
+                        <i class="fa-solid fa-shield-halved" style="color: var(--neon-blue);"></i> Compra 100% Segura via WhatsApp
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h4>CYBER.SETUP</h4>
+                <p>A loja número 1 em hardware de alta performance.</p>
+            </div>
+            <div class="footer-col footer-links">
+                <h4>NAVEGAÇÃO</h4>
+                <a href="index.html">Home</a>
+                <a href="loja.html">Loja</a>
+                <a href="admin.html">Admin</a>
+            </div>
+            <div class="footer-col">
+                <h4>PRECISA DE AJUDA?</h4>
+                <div class="social-icons">
+                    <i class="fa-brands fa-whatsapp"></i>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">&copy; 2025 CyberSetup. Todos os direitos reservados.</div>
+    </footer>
+
+    <script type="module" src="script.js"></script>
+</body>
+</html>
